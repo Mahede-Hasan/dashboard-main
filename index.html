@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <!-- style Link -->
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <main class="main-container d-flex">
+
+        <!-- side navbar -->
+        <nav class="navbar container-fluid navbar-expand-lg  navbar-container me-3 rounded-2">
+            <div class=" side-nav-icon px-0">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse navbar-list-container" id="navbarTogglerDemo01">
+                    <ul class="container-fluid navbar-nav-side nav-lists  mb-2 mb-lg-0 d-flex flex-column">
+                        <li onclick="clickMyListing()" class="nav-item active-route nav-links">
+                            <a class=" " aria-current="page" href="#My_Listing"><span class="pe-2">
+                                    <!-- svg icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                                        class="bi bi-card-list" viewBox="0 0 16 16">
+                                        <path
+                                            d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z" />
+                                        <path
+                                            d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8m0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0M4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0" />
+                                    </svg>
+                                </span>My Listing <span class="listing-count fw-semibold">(0)</span></a>
+                        </li>
+                        <li onclick="clickMyProfile()" class="nav-item nav-links">
+                            <a class="" aria-current="page" href="/#My_Profile">
+                                <span class="pe-2">
+                                    <!-- svg icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                                        class="bi bi-person-circle" viewBox="0 0 16 16">
+                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                        <path fill-rule="evenodd"
+                                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                                    </svg>
+                                </span>
+                                My Profile</a>
+                        </li>
+                        <li onclick="clickMyFavorite()" class="nav-item nav-links">
+                            <a class="" aria-current="page" href="/#My_Favorite"><span class="pe-2">
+                                    <!-- svg icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                                        class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
+                                    </svg>
+                                </span>Favorite</a>
+                        </li>
+                        <li onclick="clickMyAnnouncement()" class="nav-item nav-links">
+                            <a class=" d-flex" aria-current="page" href="/#My_Announcement"><span class="pe-2">
+                                    <!-- svg icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                                        class="bi bi-megaphone-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0zm-1 .724c-2.067.95-4.539 1.481-7 1.656v6.237a25.222 25.222 0 0 1 1.088.085c2.053.204 4.038.668 5.912 1.56zm-8 7.841V4.934c-.68.027-1.399.043-2.008.053A2.02 2.02 0 0 0 0 7v2c0 1.106.896 1.996 1.994 2.009a68.14 68.14 0 0 1 .496.008 64 64 0 0 1 1.51.048zm1.39 1.081c.285.021.569.047.85.078l.253 1.69a1 1 0 0 1-.983 1.187h-.548a1 1 0 0 1-.916-.599l-1.314-2.48a65.81 65.81 0 0 1 1.692.064c.327.017.65.037.966.06z" />
+                                    </svg>
+                                </span>Announcements</a>
+                        </li>
+                        <div class="mt-4">
+                            <a class="listing-submit-btn w-100 mb-4 py-1 d-block" href="">Submit Listing</a>
+                            <a class="dashboard-log-out-btn w-100 mb-3 py-1 d-block" href="">Log Out</a>
+                        </div>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+        <!-- All Menu Main Section-->
+        <section class="container-fluid   smt-main-section px-0" id="allMenu">
+
+            <!-- My Listing Area -->
+            <section class="container-fluid menuItem px-0" id="my-listing-page">
+                <nav class="navbar navbar-expand-lg shadow-sm rounded-2">
+                    <div class="container-fluid">
+                        <!-- My listing response toggle button -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                            <!-- My listing menubar -->
+                            <ul class="smt-nav-listing nav-list navbar-nav me-auto mb-2 mb-lg-0">
+
+                                <li class="nav-item`">
+                                    <a onclick="clickAllListing()" class="nav-link active" aria-current="page"
+                                        href="#My_Listing/All_Listing">All Listings</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a onclick="clickPublish()" class="nav-link" aria-current="page"
+                                        href="#My_Listing/Publish">Published</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a onclick="clickPending()" class="nav-link" aria-current="page"
+                                        href="#My_Listing/Pending">Pending</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a onclick="clickExpired()" class="nav-link" aria-current="page"
+                                        href="#My_Listing/Expired">Expired</a>
+                                </li>
+
+                            </ul>
+
+                            <!-- My listing search place -->
+                            <form class="d-flex" role="search">
+                                <input class="search-listing-input  me-2 rounded-5" type="search"
+                                    placeholder="Search Listings" aria-label="Search">
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- all listing table -->
+                <table class="table table-striped mt-3 all-listing shadow-sm rounded-1">
+
+                    <!-- table head -->
+                    <thead>
+                        <tr class="table-head-content">
+                            <th class="py-4 text-secondary ps-4" scope="col">LISTING</th>
+                            <th class="py-4 text-secondary" scope="col">EXPIRATION</th>
+                            <th class="py-4 text-secondary" scope="col">PENDING</th>
+                        </tr>
+                    </thead>
+
+                    <!-- table body -->
+                    <tbody>
+                        <tr class="table-data-content" scope="row">
+                            <td colspan="1" class="my-listing-table-content col-1">No item found</td>
+                            <td colspan="1" class="my-listing-table-content col-1"></td>
+                            <td colspan="1" class="my-listing-table-content col-1"></td>
+                        </tr>
+                        <tr class="table-data-content" scope="row">
+                            <td colspan="3" class="my-listing-table-third-row"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Publish table -->
+                <table class="table table-striped mt-3 publish shadow-sm rounded-1">
+
+                    <!-- table head -->
+                    <thead class="table-head-content">
+                        <tr>
+                            <th class="py-4 text-secondary ps-4" scope="col">PUBLISH</th>
+                            <th class="py-4 text-secondary" scope="col">EXPIRATION</th>
+                            <th class="py-4 text-secondary" scope="col">PENDING</th>
+                        </tr>
+                    </thead>
+
+                    <!-- table body -->
+                    <tbody>
+                        <tr class="table-data-content" scope="row">
+                            <td colspan="1" class="my-listing-table-content col-1">No publish found</td>
+                            <td colspan="1" class="my-listing-table-content col-1"></td>
+                            <td colspan="1" class="my-listing-table-content col-1"></td>
+                        </tr>
+                        <tr class="table-data-content" scope="row">
+                            <td colspan="3" class="my-listing-table-third-row"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Pending table -->
+                <table class="table table-striped mt-3 pending shadow-sm rounded-1">
+
+                    <!-- table head -->
+                    <thead class="table-head-content">
+                        <tr>
+                            <th class="py-4 text-secondary ps-4" scope="col">PENDING</th>
+                            <th class="py-4 text-secondary" scope="col">EXPIRATION</th>
+                            <th class="py-4 text-secondary" scope="col">PENDING</th>
+                        </tr>
+                    </thead>
+
+                    <!-- table body -->
+                    <tbody>
+                        <tr class="table-data-content" scope="row">
+                            <td colspan="1" class="my-listing-table-content col-1">No pending found</td>
+                            <td colspan="1" class="my-listing-table-content col-1"></td>
+                            <td colspan="1" class="my-listing-table-content col-1"></td>
+                        </tr>
+                        <tr class="table-data-content" scope="row">
+                            <td colspan="3" class="my-listing-table-third-row"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Expired table -->
+                <table class="table table-striped mt-3 expired shadow-sm rounded-1">
+
+                    <!-- table head -->
+                    <thead class="table-head-content">
+                        <tr class="table-data-content">
+                            <th class="py-4 text-secondary ps-4" scope="col">EXPIRED</th>
+                            <th class="py-4 text-secondary" scope="col">EXPIRATION</th>
+                            <th class="py-4 text-secondary" scope="col">PENDING</th>
+                        </tr>
+                    </thead>
+
+                    <!-- table body -->
+                    <tbody>
+                        <tr class="table-data-content" scope="row">
+                            <td colspan="1" class="my-listing-table-content col-1">No Expired found</td>
+                            <td colspan="1" class="my-listing-table-content col-1"></td>
+                            <td colspan="1" class="my-listing-table-content col-1"></td>
+                        </tr>
+                        <tr class="table-data-content" scope="row">
+                            <td colspan="3" class="my-listing-table-third-row"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <!-- my listing all end -->
+
+            <!-- My Profile Area -->
+            <section class=" smt-my-profile-area mb-4 menuItem" id="my-profile-page">
+
+                <div class=" smt-my-profile ">
+
+                    <!-- form box area -->
+                    <div class="form-box border border-1 rounded-1 shadow-sm mb-3">
+
+                        <form>
+                            <div class="full-container-form container-fluid">
+                                <div class="input-container">
+                                    <!-- My profile Heading -->
+                                    <div class="profile-header py-2 px-3 border-bottom mx-0">
+                                        <h3>My Profile</h3>
+                                    </div>
+    
+                                    <!-- Form Inputs -->
+                                    <div class="mb-3 mx-4 mt-4">
+                                        <label for="exampleFormControlInput1" class="form-label my-profile-label">Display
+                                            Name</label>
+                                        <input type="text" class="form-control my-profile-input"
+                                            id="exampleFormControlInput1" required placeholder="Display Name">
+                                    </div>
+                                    <div class="mb-3 mx-4 mt-4">
+                                        <label for="exampleFormControlInput2" class="form-label my-profile-label">User
+                                            Name</label>
+                                        <input type="text" class="form-control my-profile-input"
+                                            id="exampleFormControlInput2" required placeholder="User Name">
+                                        <p class="pt-1 text-secondary">( user name cannot be changed )</p>
+                                    </div>
+                                    <div class="mb-3 mx-4 mt-4">
+                                        <label for="exampleFormControlInput3" class="form-label my-profile-label">First
+                                            Name</label>
+                                        <input type="text" class="form-control my-profile-input"
+                                            id="exampleFormControlInput3" required placeholder="First Name">
+                                    </div>
+                                    <div class="mb-3 mx-4 mt-4">
+                                        <label for="exampleFormControlInput4" class="form-label my-profile-label">Last
+                                            Name</label>
+                                        <input type="text" class="form-control my-profile-input"
+                                            id="exampleFormControlInput4" required placeholder="Last Name">
+                                    </div>
+                                    <div class="mb-3 mx-4 mt-4">
+                                        <label for="exampleFormControlInput5" class="form-label my-profile-label">Email (
+                                            Required )</label>
+                                        <input type="email" class="form-control my-profile-input"
+                                            id="exampleFormControlInput5" required placeholder="Email Address">
+                                    </div>
+                                    <div class="mb-3 mx-4 mt-4">
+                                        <label for="exampleFormControlInput6"
+                                            class="form-label my-profile-label">Phone</label>
+                                        <input type="number" class="form-control my-profile-input"
+                                            id="exampleFormControlInput6" required placeholder="Phone">
+                                    </div>
+                                    <div class="mb-3 mx-4 mt-4">
+                                        <label for="exampleFormControlInput7"
+                                            class="form-label my-profile-label">Website</label>
+                                        <input type="url" class="form-control my-profile-input"
+                                            id="exampleFormControlInput7" placeholder="Website">
+                                    </div>
+                                    <div class="mb-3 mx-4 mt-4">
+                                        <label for="exampleFormControlInput8"
+                                            class="form-label my-profile-label">Address</label>
+                                        <input type="text" class="form-control my-profile-input"
+                                            id="exampleFormControlInput8" required placeholder="Address">
+                                    </div>
+                                    <div class="mb-3 mx-4 mt-4">
+                                        <label for="exampleFormControlInput9" class="form-label my-profile-label">New
+                                            Password</label>
+                                        <input type="password" class="form-control my-profile-input"
+                                            id="exampleFormControlInput9" required placeholder="New Password">
+                                    </div>
+                                    <div class="mb-3 mx-4 mt-4">
+                                        <label for="exampleFormControlInput10" class="form-label my-profile-label">Confirm
+                                            New
+                                            Password</label>
+                                        <input type="password" class="form-control my-profile-input"
+                                            id="exampleFormControlInput10" required placeholder="Confirm New Password">
+                                    </div>
+                                    <div class="mb-3 mx-4 mt-4 d-flex flex-column">
+                                        <label for="exampleFormControlInput11" class="form-label my-profile-label">About
+                                            Author</label>
+                                        <textarea name="" id="" cols="100" rows="10"></textarea>
+                                    </div>
+    
+                                    <!-- Social Profiles -->
+                                    <p class="social-profile-header ms-4 mt-5 fw-bold ">Social Profiles</p>
+                                    <hr class="mx-4">
+    
+                                    <div class="mb-3 mx-4 mt-4">
+                                        <label for="exampleFormControlInput12"
+                                            class="form-label my-profile-label">Facebook</label>
+                                        <input type="url" class="form-control my-profile-input"
+                                            id="exampleFormControlInput12" required placeholder="Enter Your Facebook url">
+                                        <p>Leave it empty to hide</p>
+                                    </div>
+                                    <div class="mb-3 mx-4 mt-4">
+                                        <label for="exampleFormControlInput13"
+                                            class="form-label my-profile-label">Twitter</label>
+                                        <input type="url" class="form-control my-profile-input"
+                                            id="exampleFormControlInput13" required placeholder="Enter Your Twitter url">
+                                        <p>Leave it empty to hide</p>
+                                    </div>
+                                    <div class="mb-3 mx-4 mt-4">
+                                        <label for="exampleFormControlInput14"
+                                            class="form-label my-profile-label">LinkedIn</label>
+                                        <input type="url" class="form-control my-profile-input"
+                                            id="exampleFormControlInput14" required placeholder="Enter Your LinkedIn url">
+                                        <p>Leave it empty to hide</p>
+                                    </div>
+                                    <div class="mb-3 mx-4 mt-4">
+                                        <label for="exampleFormControlInput15"
+                                            class="form-label my-profile-label">Youtube</label>
+                                        <input type="url" class="form-control my-profile-input"
+                                            id="exampleFormControlInput15" required placeholder="Enter Your Youtube url">
+                                        <p>Leave it empty to hide</p>
+                                    </div>
+    
+                                    <!-- form save button -->
+                                    <div class="container-fluid px-4">
+                                        <button class="form-dashboard-button py-2 mb-3 mt-2 fw-semibold" type="submit">Save
+                                            Changes</button>
+                                    </div>
+                                </div>
+    
+                                <!-- select photo -->
+                                <div class="select-photo d-flex flex-column align-items-center">
+                                    <img class="user-image mb-3" src="./images/user.svg" alt="">
+                                    <div class="w-100 d-flex justify-content-center border border-1 py-2">
+                                        <input type="file" name="" id="">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- My Favorite List Area -->
+            <section class="smt-my-favorite-list container-fluid mb-4  menuItem" id="my-favorite-page">
+                <div class="favorite-list-content shadow-sm ">
+                    <p>Nothing Found</p>
+                </div>
+            </section>
+
+            <!-- My Announcement Area -->
+            <section class="smt-my-announcement  container-fluid mb-4 menuItem" id="my-announcement-page">
+                <div class="favorite-list-content shadow-sm ">
+                    <p>No announcement found</p>
+                </div>
+            </section>
+
+        </section>
+    </main>
+
+    <!-- js link -->
+    <script src="./js/dashboard.js"></script>
+    <script src="js/activePage.js"></script>
+
+    <!-- Bootstrap JS Link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
