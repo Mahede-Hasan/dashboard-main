@@ -4,7 +4,7 @@ body {
 }
 
 .main-container {
-    margin: 80px 60px;
+    margin: 80px 60px !important;
 }
 
 /* side nav style */
@@ -90,8 +90,8 @@ body {
 }
 
 .listing-submit-btn:hover {
-    border: 2px solid rgb(118, 117, 117);
-    color: rgb(118, 117, 117);
+    border: 2px solid rgb(118, 117, 117) !important;
+    color: rgb(252, 245, 245) !important;
     background-color: gray;
     transition: all 1s ease;
 }
